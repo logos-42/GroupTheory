@@ -1,0 +1,9 @@
+name = "lean"
+version = "0.1.0"
+
+[lean-options]
+extraArgs = ["-DwarningAsErrors=false"]
+
+[[executable]]
+name = "lean"
+main = "main"

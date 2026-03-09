@@ -1,0 +1,22 @@
+# Lean / Lake
+lake-manifest.json
+.leantime/
+lean-toolchain~
+
+# Build output
+build/
+lib/
+*.olean
+*.olean.dyn
+*.ilean
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
