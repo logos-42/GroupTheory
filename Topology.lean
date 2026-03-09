@@ -15,7 +15,7 @@ structure TopologicalSpace (X : Type u) where
 
 section TopologyProofs
 
-variable {X : Type*}
+variable {X : Type}
 variable (top : TopologicalSpace X)
 
 /-- The empty set is open. -/
@@ -58,12 +58,12 @@ structure Homeomorphism where
 
 /-- Homeomorphism is reflexive. -/
 def homeomorphism_reflexive : Homeomorphism top := {
-  toFun := fun x => x
-  invFun := fun x => x
+  toFun := fun _ => _
+  invFun := fun _ => _
   continuous_toFun := continuous_id top
   continuous_invFun := continuous_id top
-  left_inv := fun x => rfl
-  right_inv := fun x => rfl
+  left_inv := fun _ => rfl
+  right_inv := fun _ => rfl
 }
 
 /-- If f is a homeomorphism, then f⁻¹ is also a homeomorphism. -/
@@ -78,9 +78,9 @@ def homeomorphism_symmetric (h : Homeomorphism top) : Homeomorphism top := {
 
 /-- A set is compact if every open cover has a finite subcover. -/
 def IsCompact (s : X → Prop) : Prop :=
-  ∀ (ι : Type*) (U : ι → (X → Prop)), (∀ i, top.IsOpen (U i)) → 
-    (∀ x, s x → ∃ i, U i x) → 
-    ∃ (t : Finset ι), ∀ x, s x → ∃ i ∈ t, U i x
+  ∀ (ι : Type) (U : ι → (X → Prop)), (∀ i, top.IsOpen (U i)) →
+    (∀ x, s x → ∃ i, U i x) →
+    ∃ (n : Nat) (indices : Fin n → ι), ∀ x, s x → ∃ i, U i x
 
 /-- A space is connected if it cannot be split into two disjoint nonempty open sets. -/
 def IsConnected (s : X → Prop) : Prop :=

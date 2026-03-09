@@ -19,7 +19,7 @@ structure GroupStruct (G : Type u) where
 
 section GroupProofs
 
-variable {G : Type*}
+variable {G : Type}
 variable (grp : GroupStruct G)
 
 /-- The identity element is unique in a group. -/

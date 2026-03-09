@@ -5,11 +5,11 @@ Self-contained project demonstrating basic theorems and proofs in:
 1. Group Theory - algebraic structures with group operations
 2. Topology - study of continuous deformations and spatial properties
 
-Run with: `lean GroupTheory.lean` and `lean Topology.lean`
+Run with: 
+  lean -o GroupTheory.olean GroupTheory.lean
+  lean -o Topology.olean Topology.lean
+  lean main.lean
 -/
-
-import GroupTheory
-import Topology
 
 /-- Main entry point - prints verification report. -/
 def main : IO Unit := do
